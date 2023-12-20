@@ -1,0 +1,18 @@
+h2 {
+    color: darkslateblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url('../imagenes/biology.png');
+}
+
+
+.block {
+    margin: 2%;
+    border: 10px;
+    border-color: brown;
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}

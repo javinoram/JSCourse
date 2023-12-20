@@ -1,0 +1,39 @@
+h1 {
+    color: rgb(131, 129, 144);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(168, 32, 32);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+body {
+    background-image: url('../imagenes/biology.png');
+}
+
+
+.block {
+    margin: 2%;
+    border: 10px;
+    border-color: brown;
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+#carrera {
+    font-style: italic;
+    color: brown;
+}
+
+#carrera:hover {
+    color:yellow;
+}
+
+div h2 + p {
+    font-size: large;
+}
+

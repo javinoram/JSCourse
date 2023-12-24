@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+    <head>
+        <title>Juego de preguntas</title>
+        <link rel="stylesheet", href="misEstilos.css">
+    </head>
+    <body>
+        <h1>Bienvenido al juego de preguntas</h1>
+        <p>Usted tiene 30 segundos para responder las 5 preguntas.</p>
+        <p id="tiempofaltante"></p>
+        <button onclick="comenzarTiempo()">Comenzar</button><br>
+        <button onclick="reiniciarJuego()">Reiniciar</button>
+
+        <h2>Pregunta 1</h2>
+        <p>¿Cual es la capital de Chile?</p>
+        <input type="text" id="P1">
+
+        <h2>Pregunta 2</h2>
+        <p>¿Cual es la capital de Argentina?</p>
+        <input type="text" id="P2">
+
+        <h2>Pregunta 3</h2>
+        <p>¿Cual es la capital de Peru?</p>
+        <input type="text" id="P3">
+
+        <h2>Pregunta 4</h2>
+        <p>¿Cual es la capital de Bolivia?</p>
+        <input type="text" id="P4">
+
+        <h2>Pregunta 5</h2>
+        <p>¿Cual es la capital de Brasil?</p>
+        <input type="text" id="P5"><br>
+
+
+        <button onclick="mostrarTexto()">Enviar</button>
+
+
+        <script>
+            let tiempofaltante = document.getElementById("tiempofaltante");
+            let tiempoincial = 30;
+
+            let tiempoTerminado;
+            let intervaloDeTiempo;
+
+            function mostrarTexto() {
+                clearInterval(intervaloDeTiempo);
+                clearTimeout(tiempoTerminado);
+
+                let fecha = new Date();
+
+                let P1 = document.getElementById("P1");
+                let P2 = document.getElementById("P2");
+                let P3 = document.getElementById("P3");
+                let P4 = document.getElementById("P4");
+                let P5 = document.getElementById("P5");
+
+                let texto1 = fecha.toLocaleDateString("es-ES")
+                    +"\nRespuesta a pregunta 1: "+P1.value+"\nRespuesta a pregunta 2: "+P2.value+
+                    "\nRespuesta a pregunta 3: "+P3.value+"\nRespuesta a pregunta 4: "+P4.value+"\nRespuesta a pregunta 5: "+P5.value;
+                alert(texto1);
+            }
+
+            function comenzarTiempo() {
+                tiempoincial=30;
+                intervaloDeTiempo = setInterval(tictac, 1000);
+                tiempoTerminado = setTimeout(TiempoCumplido, 1000*30);
+            }
+
+            function TiempoCumplido() {
+                clearInterval(intervaloDeTiempo);
+                clearTimeout(tiempoTerminado);
+                alert("El tiempo se agoto\nHaga click en reiniciar");
+            }
+
+            function tictac() {
+                if (tiempoincial <= 0){
+                    tiempofaltante.textContent = "Faltan " + tiempoincial +" segundos";
+                }else{
+                    tiempoincial = tiempoincial-1;
+                    tiempofaltante.textContent = "Faltan " + tiempoincial +" segundos";
+                }
+
+            }
+
+            function reiniciarJuego() {
+                location.reload()
+            }
+        </script>
+    </body>
+</html>

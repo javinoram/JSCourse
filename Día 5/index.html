@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <head>
+        <title>Peliculas</title>
+        <link rel="stylesheet", href="misEstilos.css">
+        <script src="misScripts.js"></script>
+    </head>
+    <body>
+        <!--Rango de edades menores de 13, entre 13 y 16, y mayores de 16 -->
+        <h1>Recomendadora de peliculas</h1>
+        <p>Ingrese su edad</p>
+        <input type="number" id="edad"><br>
+
+        <p>Seleccione genero preferido</p>
+        <button onclick="comedia()"> Comedia </button>
+        <button onclick="drama()"> Drama </button><br>
+
+        <button onclick="musical()"> Musical </button>
+        <button onclick="crimen()"> Crimen </button><br><br>
+        
+        
+        <h3>Resultado</h3>
+        <h1 id="recomendacion"></h1>
+        </body>
+</html>
